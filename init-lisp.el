@@ -111,6 +111,18 @@
 (define-key emacs-lisp-mode-map (kbd "C-x C-a") 'pp-macroexpand-last-sexp)
 (define-key emacs-lisp-mode-map (kbd "C-x C-e") 'pp-eval-last-sexp)
 
+;; When `paredit-mode' is enabled it takes precedence over the major
+;; mode effectively rebinding C-j to `paredit-newline' instead of
+;; `eval-print-last-sexp'.  I do not want this overridden in
+;; lisp-interaction-mode.  So, use the buffer-local
+;; `minor-mode-overriding-map-alist' to remove the C-j mapping from
+;; the standard `paredit-mode' bindings.
+(defun restore-lisp-interaction-mode-key ()
+  (setq minor-mode-overriding-map-alist
+        `((paredit-mode
+           ,@(remove (cons ?\C-j 'paredit-newline)
+                     paredit-mode-map)))))
+(add-hook 'lisp-interaction-mode-hook 'restore-lisp-interaction-mode-key)
 
 ;; ----------------------------------------------------------------------------
 ;; Delete .elc files when reverting the .el from VC or magit
