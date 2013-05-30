@@ -15,7 +15,7 @@
 
 ;; hook AC into completion-at-point
 (defun sanityinc/auto-complete-at-point ()
-  (when (and (not (minibufferp)) 
+  (when (and (not (minibufferp))
 	     (fboundp 'auto-complete-mode)
 	     auto-complete-mode)
     (auto-complete)))
@@ -25,6 +25,7 @@
 
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
+(ac-set-trigger-key "TAB")
 
 (set-default 'ac-sources
              '(ac-source-imenu
@@ -37,7 +38,8 @@
                 sass-mode yaml-mode csv-mode espresso-mode haskell-mode
                 html-mode nxml-mode sh-mode smarty-mode clojure-mode
                 lisp-mode textile-mode markdown-mode tuareg-mode
-                js3-mode css-mode less-css-mode sql-mode ielm-mode))
+                js3-mode css-mode less-css-mode sql-mode ielm-mode
+                html-erb-mode coffee-mode))
   (add-to-list 'ac-modes mode))
 
 
