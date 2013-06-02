@@ -4,6 +4,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-filename-at-point nil)
 (setq ido-auto-merge-work-directories-length 0)
+(setq ido-auto-merge-delay-time 99999)
 (setq ido-use-virtual-buffers t)
 
 (require-package 'ido-ubiquitous)

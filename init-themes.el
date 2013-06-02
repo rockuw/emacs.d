@@ -45,7 +45,8 @@ ignored: use `custom-enabled-themes' instead."
 ;;------------------------------------------------------------------------------
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-solarized-light))
+;; (setq-default custom-enabled-themes '(sanityinc-solarized-light))
+(setq-default custom-enabled-themes nil)
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -55,8 +56,7 @@ ignored: use `custom-enabled-themes' instead."
       (load-theme theme)))
   (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes))))
 
-;; Uncomment the following line to load the default theme at start
-;; (add-hook 'after-init-hook 'reapply-themes)
+(add-hook 'after-init-hook 'reapply-themes)
 
 ;;------------------------------------------------------------------------------
 ;; Set line number gracefully

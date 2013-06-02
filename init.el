@@ -49,7 +49,7 @@
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-windows)
-(require 'init-sessions)
+;; (require 'init-sessions)
 (require 'init-fonts)
 (require 'init-mmm)
 (require 'init-growl)
@@ -110,9 +110,9 @@
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
 ;;----------------------------------------------------------------------------
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(when (file-exists-p custom-file)
-  (load custom-file))
+;; (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+;; (when (file-exists-p custom-file)
+;;  (load custom-file))
 
 
 ;;----------------------------------------------------------------------------
