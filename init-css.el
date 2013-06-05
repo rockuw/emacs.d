@@ -54,7 +54,7 @@
 (require-package 'flymake-sass)
 (add-hook 'sass-mode-hook 'flymake-sass-load)
 (add-hook 'scss-mode-hook 'flymake-sass-load)
-(setq-default scss-compile-at-save nil)
+(setq-default scss-compile-at-save t)
 
 
 
