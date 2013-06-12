@@ -73,5 +73,15 @@
   (interactive)
   (browse-url (concat "file://" (buffer-file-name))))
 
+;;----------------------------------------------------------------------------
+;; Add key binding for `ff-find-other-file` which opens the corresponding
+;; .cpp/.h file of the .h/.cpp file
+;;----------------------------------------------------------------------------
+(setq ff-find-other-file-bind
+      (lambda ()
+        (local-set-key (kbd "C-c o") 'ff-find-other-file)))
+
+(add-hook 'c++-mode-hook ff-find-other-file-bind)
+(add-hook 'c-mode-hook ff-find-other-file-bind)
 
 (provide 'init-utils)
