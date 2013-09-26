@@ -13,5 +13,13 @@
     (global-set-key (kbd "M-ˍ") 'ns-do-hide-others) ;; what describe-key reports for cmd-option-h
     ))
 
+(defun pbcopy ()
+  "Copy the contents of the region to clipboard "
+  (interactive)
+  (if (or (and (boundp 'mark-active) mark-active)
+          (and (fboundp 'region-exists-p) (region-exists-p)))
+      (call-process-region
+       (region-beginning) (region-end) "pbcopy" nil t t)
+    (error "region not selected")))
 
 (provide 'init-osx-keys)
