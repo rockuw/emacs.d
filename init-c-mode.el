@@ -9,5 +9,6 @@
   (gtags-mode t))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 (provide 'init-c-mode)
