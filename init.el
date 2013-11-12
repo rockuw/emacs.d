@@ -127,6 +127,8 @@
 ;;----------------------------------------------------------------------------
 (require 'init-locales)
 
+(define-key global-map (kbd "C-x C-o") 'ff-find-other-file)
+(setq smex-key-advice-ignore-menu-bar t)
 
 ;; Local Variables:
 ;; coding: utf-8
