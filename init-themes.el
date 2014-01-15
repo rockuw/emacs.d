@@ -59,27 +59,6 @@ ignored: use `custom-enabled-themes' instead."
 (add-hook 'after-init-hook 'reapply-themes)
 
 ;;------------------------------------------------------------------------------
-;; Set line number gracefully
-;;------------------------------------------------------------------------------
-;; Set the line number color
-(custom-set-faces
- '(linum ((t (:inherit (shadow default) :foreground "green")))))
-
-;; Show line number gracefully
-(global-linum-mode 1)
-(setq linum-format
-      (lambda (line)
-        (propertize
-         (format (concat "%"
-                         (number-to-string
-                          (length (number-to-string
-                                   (line-number-at-pos (point-max)))))
-                         "d ")
-                 line)
-         'face 'linum)))
-
-
-;;------------------------------------------------------------------------------
 ;; Toggle between light and dark
 ;;------------------------------------------------------------------------------
 (defun light ()
