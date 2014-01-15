@@ -83,6 +83,7 @@
 (require 'init-clojure)
 (require 'init-common-lisp)
 (require 'init-c-mode)
+(require 'init-go-mode)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
