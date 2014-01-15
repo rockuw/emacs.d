@@ -84,6 +84,7 @@
 (require 'init-common-lisp)
 (require 'init-c-mode)
 (require 'init-go-mode)
+(require 'init-yas)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
